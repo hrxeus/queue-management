@@ -14,7 +14,8 @@ def add_new_visitor():
     print("Visitor Added Successfully".ljust(50,"-"))
     print("Token number : T{}".format(g_token))
     
-    x = input("(Press '+' to Add Another Visitor)".center(50,"-"))
+    print("(Press '+' to Add Another Visitor)".center(50,"-"))
+    x = eval(input())
     if(x == '+'):
         add_another = True
         print("x = + detected")
@@ -47,11 +48,10 @@ while True:
 
     if(menu_no == 7):
         break
-
-    add_new_visitor()
-    g_token += 1
-    if add_another:
-        pass
+    if(menu_no == 1):
+        add_new_visitor()
+        g_token += 1
+    
         
             
     
