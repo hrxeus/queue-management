@@ -1,4 +1,3 @@
-visitor=[['T1','ABC','Hall Ticket Issues'],['T2','pqr','Admission Enquiry'],['T3','SDSF','Admission Enquiry'],['T3','udhf','Hall Ticket Issues'],['T2','fhgihg','Admission Enquiry']]
 def priority():
     for i in visitor:
         if i[2]=='Hall Ticket Issues':
