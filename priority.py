@@ -9,7 +9,7 @@ def priority():
         elif i[2]=='Scholarship Assistance':
             i.append(4)
 
-priority()
-print(visitor)
 visitor.sort(key=lambda x: x[-1])
 print(visitor)
+priority()
+
