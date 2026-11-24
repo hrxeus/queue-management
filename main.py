@@ -1,35 +1,29 @@
 import add_new_visitor as add
-import report as view
-
-waiting_queue = []
-completed_services = []
-g_token = 0
+from search_visitor import search_token
+from serve import serve_next_visitor
 
 
 while True:
+    print("-" * 50)
+    print("Smart Queue Management System".center(50, "-"))
+    print("-" * 50)
+    print("1. Add New Visitor\n2. View Waiting Queue\n3. Serve Next Visitor")
+    print("4. Search Token\n5. Completed Services\n6. Exit")
+    print("-" * 50)
 
-    print("".center(50,"-"))
-    print("Smart Queue Management System".center(50,"-"))
-    print("".center(50,"-"))
-    print("1. Add New Visitor\n2. View Waiting Queue\n3. Serve Next Visitor\n4. Search Token\n5. Completed Services\n7. Exit")
-    print("".center(50,"-"))
-
-    while True:
-            menu_no = input("Enter your choice : ")
-            if menu_no.isdecimal():
-                menu_no = int(menu_no)
-                break
-            else:
-                print("Please select correct option!!")
-    print("".center(50,"-"))
-    
-    if(menu_no == 7):
-        print("Thank You".center(50,"_"))
-        break
-    if(menu_no > 7):
-        print("Please select correct option!!")
-    if(menu_no == 1):
+    choice = input("Enter your choice : ").strip()
+    if choice == "1":
         add.add_new_visitor()
-    if(menu_no == 2):
-        view.generate_reports()
-    
+    elif choice == "2":
+        display_visitors(add.waiting_queue, "Waiting Queue", "No visitors are waiting.")
+    elif choice == "3":
+        serve_next_visitor(add.waiting_queue)
+    elif choice == "4":
+        search_token(add.waiting_queue)
+    elif choice == "5":
+        display_visitors(add.completed_services, "Completed Services", "No completed services yet.")
+    elif choice == "6":
+        print("Thank You".center(50, "_"))
+        break
+    else:
+        print("Please select correct option!!")
