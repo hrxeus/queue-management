@@ -31,8 +31,7 @@ def add_new_visitor():
     visitor_details = (g_token, v_name, a_services[v_service_type - 1])
     print("Token number : T{}".format(g_token))
     
-    waiting_queue.append(visitor_details)
-    print(visitor_details)       
-    
-       
-            
+    return visitor_details
+
+
+g_token = 0

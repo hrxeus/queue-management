@@ -1,4 +1,4 @@
-def generate_reports():
+def generate_reports(waiting_queue):
 
     total_waiting = len(waiting_queue)
     total_served = len(completed_visitors)
