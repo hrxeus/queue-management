@@ -1,6 +1,6 @@
 def add_new_visitor():
-   
-    print("=> Adding New Visitor".ljust(50, "-"))
+    print()
+    print("Adding New Visitor")
     print("".center(50))
     
     a_services = ('Fee Payment Enquiry', 'Hall Ticket Issues', 'Admission Enquiry', 'Scholarship Assistance')
@@ -33,14 +33,11 @@ def add_new_visitor():
     global g_token
     g_token += 1
 
-    
+    print()
     print("Visitor Added Successfully".ljust(50, "-"))
     
     visitor_details = [g_token, v_name, a_services[v_service_type - 1],v_priority]
-    print("Token number : {}".format(g_token))
-    
     waiting_queue.append(visitor_details)
-    print(visitor_details)
 
 waiting_queue = []
 completed_services = []

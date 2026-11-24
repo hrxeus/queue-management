@@ -10,7 +10,8 @@ def serve_next_visitor(visitors):
     completed_services.append(visitor)
     token, name, service, priority = visitor
 
-    print("\n----- Visitor Served -----")
+    print("Visitor to be served".center(50, "-"))
+    print("-" * 50)
     print("Token:", token)
     print("Name:", name)
     print("Service:", service)

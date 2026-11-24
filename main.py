@@ -7,11 +7,11 @@ while True:
     print("-" * 50)
     print("Smart Queue Management System".center(50, "-"))
     print("-" * 50)
-    print("1. Add New Visitor\n2. View Waiting Queue\n3. Serve Next Visitor")
-    print("4. Search Token\n5. Completed Services\n6. Exit")
+    print("1. Add New Visitor\n2. View Waiting Queue\n3. Serve Next Visitor\n4. Search Token\n5. Completed Services\n6. Exit")
     print("-" * 50)
 
     choice = input("Enter your choice : ").strip()
+    print("-" * 50)
     if choice == "1":
         add.add_new_visitor()
     elif choice == "2":
@@ -23,7 +23,7 @@ while True:
     elif choice == "5":
         display_visitors(add.completed_services, "Completed Services", "No completed services yet.")
     elif choice == "6":
-        print("Thank You".center(50, "_"))
+        print("Thank You".center(50, "-"))
         break
     else:
         print("Please select correct option!!")
