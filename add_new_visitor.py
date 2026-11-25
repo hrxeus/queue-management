@@ -1,3 +1,7 @@
+from priority import priority
+waiting_queue = []
+completed_services = []
+g_token = 0
 def add_new_visitor():
     print()
     print("Adding New Visitor")
@@ -26,19 +30,18 @@ def add_new_visitor():
         v_priority = v_priority.lower()
 
         if v_priority == 'yes' or v_priority == 'no':
+            
             break
         else:
             print("Please select Yes/No !!")
-
-    global g_token
+ 
+    global g_token 
     g_token += 1
-
-    print()
-    print("Visitor Added Successfully".ljust(50, "-"))
-    
     visitor_details = [g_token, v_name, a_services[v_service_type - 1],v_priority]
     waiting_queue.append(visitor_details)
-
-waiting_queue = []
-completed_services = []
-g_token = 0
+    waiting_queue.sort(key=lambda x: x == "No")
+    print()
+    print("Visitor Added Successfully".ljust(50, "-"))
+    return waiting_queue 
+print(add_new_visitor())
+    
