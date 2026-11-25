@@ -42,6 +42,6 @@ def add_new_visitor():
     waiting_queue.sort(key=lambda x: x == "No")
     print()
     print("Visitor Added Successfully".ljust(50, "-"))
-    return waiting_queue 
-print(add_new_visitor())
+     
+
     
