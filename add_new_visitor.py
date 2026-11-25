@@ -1,47 +1,39 @@
-from priority import priority
 waiting_queue = []
-completed_services = []
-g_token = 0
+token = 0
 def add_new_visitor():
     print()
-    print("Adding New Visitor")
-    print("".center(50))
-    
-    a_services = ('Fee Payment Enquiry', 'Hall Ticket Issues', 'Admission Enquiry', 'Scholarship Assistance')
-    v_name = input("Visitors Name : ")
-    print("Available Services : ")
-    for i in range(len(a_services)):
-        print("\t", i+1, ".", a_services[i])
+    print("[ADDING NEW VISITOR]".center(50, "-"))
 
     while True:
-        v_service_type = input("Service Type : ")
-        if v_service_type.isdecimal():
-            v_service_type = int(v_service_type)
-            if v_service_type > 4 or v_service_type == 0:
-                print("Please select correct option!!")
-                continue
-            else:
-                break
-            
-        else:
-            print("Please select correct option!!")
-    while True:        
-        v_priority = input("Does visitor have priority(Yes/No) : ")
-        v_priority = v_priority.lower()
+        name = input("Visitors Name: ").strip()
+        if name:
+            break
+        print("Please enter a Name")
 
-        if v_priority == 'yes' or v_priority == 'no':
-            
+    while True:
+        service = input("Service Needed: ").strip()
+        if service:
+            break
+        print("Please enter a Service Type!")
+
+    while True:        
+        priority = input("Does visitor have priority(Yes/No): ")
+        priority = priority.lower().strip()
+
+        if priority == 'yes' or priority == 'no':
             break
         else:
-            print("Please select Yes/No !!")
- 
-    global g_token 
-    g_token += 1
-    visitor_details = [g_token, v_name, a_services[v_service_type - 1],v_priority]
+            print("Please select Yes/No!!")
+
+    print("-" * 50)
+    global token 
+    token += 1
+    visitor_details = [token, name, service, priority]
     waiting_queue.append(visitor_details)
-    waiting_queue.sort(key=lambda x: x == "No")
+    print(f"Token number = {token}, please wait!")
+    print("-" * 50)
     print()
-    print("Visitor Added Successfully".ljust(50, "-"))
+    waiting_queue.sort(key=lambda visitor: visitor[3] == "no")
      
 
     
