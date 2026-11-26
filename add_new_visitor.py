@@ -16,7 +16,7 @@ def add_new_visitor():
             break
         print("Please enter a Service Type!")
 
-    while True:        
+    while True:
         priority = input("Does visitor have priority(Yes/No): ")
         priority = priority.lower().strip()
 
