@@ -2,7 +2,6 @@ def search_token(waiting_queue, completed_queue):
     print()
     print("[SEARCH TOKEN]".center(50,"-"))
 
-
     search = input("Enter Token Number: ")
     print("-" * 50)
     found = False

@@ -8,15 +8,15 @@ def add_new_visitor():
         name = input("Visitors Name: ").strip()
         if name:
             break
-        print("Please enter a Name")
+        else: print("Please enter a Name")
 
     while True:
         service = input("Service Needed: ").strip()
         if service:
             break
-        print("Please enter a Service Type!")
+        else: print("Please enter a Service Type!")
 
-    while True:        
+    while True:
         priority = input("Does visitor have priority(Yes/No): ")
         priority = priority.lower().strip()
 
