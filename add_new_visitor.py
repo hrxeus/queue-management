@@ -12,7 +12,7 @@ def add_new_visitor():
     a_services = ('Fee Payment Enquiry', 'Hall Ticket Issues', 'Admission Enquiry', 'Scholarship Assistance','Library Card','Other queries')
     print("Available Services : ")
     for i in range(len(a_services)):
-        print(f"{i+1}. a_services[i]")
+        print(f"{i+1}. {a_services[i]}")
     while True:
         v_service_type = input("Service Type : ")
         if v_service_type.isdecimal():
