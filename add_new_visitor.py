@@ -22,6 +22,8 @@ def add_new_visitor():
                 continue
             else:
                 break
+        else:
+            print("Please select correct option!!")
 
     while True:
         priority = input("Does visitor have priority(Yes/No): ")
