@@ -11,7 +11,7 @@ def add_new_visitor():
         else: print("Please enter a Name")
 
     while True:
-        service = input("Service Needed: ").strip()
+        service = input("Service Needed: ").strip().lower()
         if service:
             break
         else: print("Please enter a Service Type!")
