@@ -9,12 +9,19 @@ def add_new_visitor():
         if name:
             break
         else: print("Please enter a Name")
-
+    a_services = ('Fee Payment Enquiry', 'Hall Ticket Issues', 'Admission Enquiry', 'Scholarship Assistance','Library Card','Other queries')
+    print("Available Services : ")
+    for i in range(len(a_services)):
+        print(i+1, ".", a_services[i])
     while True:
-        service = input("Service Needed: ").strip()
-        if service:
-            break
-        else: print("Please enter a Service Type!")
+        v_service_type = input("Service Type : ")
+        if v_service_type.isdecimal():
+            v_service_type = int(v_service_type)
+            if v_service_type > 6 or v_service_type == 0:
+                print("Please select correct option!!")
+                continue
+            else:
+                break
 
     while True:
         priority = input("Does visitor have priority(Yes/No): ")
@@ -28,7 +35,7 @@ def add_new_visitor():
     print("-" * 50)
     global token 
     token += 1
-    visitor_details = [token, name, service, priority]
+    visitor_details = [token, name, a_services[v_service_type - 1], priority]
     waiting_queue.append(visitor_details)
     print(f"Token number = {token}, please wait!")
     print("-" * 50)
